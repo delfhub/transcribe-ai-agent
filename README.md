@@ -62,6 +62,41 @@ ollama serve
 ollama pull llama2  # Or your preferred model
 ```
 
+### 7. Get a Test Sample Audio File
+
+To test the transcription pipeline, you'll need a `test_sample.mp3` file. You can download free-to-use content from YouTube:
+
+#### Option A: Using yt-dlp (Recommended)
+
+1. Install yt-dlp and ffmpeg:
+```bash
+pip install yt-dlp
+# On Linux: sudo apt-get install ffmpeg
+# On macOS: brew install ffmpeg
+# On Windows: Download from https://ffmpeg.org/download.html
+```
+
+2. Download from a free-to-use YouTube channel (e.g., [Free Music Archive](https://www.youtube.com/c/FreeMusicArchiveFMA), [Creative Commons Music](https://www.youtube.com/@CreativeCommonsMusic)):
+```bash
+yt-dlp -f bestaudio -x --audio-format mp3 -o "test_sample.mp3" "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+```
+
+3. Replace `YOUR_VIDEO_ID` with an actual video ID. Example with a Creative Commons track:
+```bash
+yt-dlp -f bestaudio -x --audio-format mp3 -o "test_sample.mp3" "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+```
+
+#### Option B: Manual Download
+
+1. Find a video with free/Creative Commons licensing on YouTube
+2. Use an online converter (e.g., [YT to MP3](https://ytmp3.cc/)) to download as MP3
+3. Save it as `test_sample.mp3` in the project root directory
+
+#### Recommended Free-to-Use Channels:
+- [Free Music Archive](https://www.youtube.com/@FreeMusicArchiveFMA)
+- [Creative Commons Music](https://www.youtube.com/@CreativeCommonsMusic)
+- [Sample Focus](https://www.youtube.com/@SampleFocus)
+
 ## Usage
 
 ### Run the Main Agent
